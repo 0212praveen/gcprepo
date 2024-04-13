@@ -1,0 +1,24 @@
+name: List GCS Bucket Contents
+
+on:
+  workflow_dispatch:
+
+jobs:
+  list_bucket_contents:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: 'latest'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: fiery-bit-420221
+          export_default_credentials: true
+
+      - name: List GCS Bucket Contents
+        run: |
+          gsutil ls gs://your-bucket-name
