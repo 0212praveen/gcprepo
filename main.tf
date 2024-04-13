@@ -15,15 +15,4 @@ resource "google_storage_bucket" "my_bucket" {
   logging {
     log_bucket = "logs_bucket"
   }
-
-  lifecycle {
-    rule {
-      action {
-        type = "Delete"
-      }
-      condition {
-        age = 30
-      }
-    }
-  }
 }
