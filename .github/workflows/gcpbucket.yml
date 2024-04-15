@@ -17,14 +17,14 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - uses: 'google-github-actions/auth@v2'
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@v2
       with:
         project_id: fiery-bit-420221
-
-    - uses: 'google-github-actions/auth@v2'
-      with:
-        credentials_json: ${{ secrets.GCP_SA_KEY }}
 
 
     - name: Deploy via GCS
