@@ -29,10 +29,10 @@ jobs:
 
     - name: Deploy via GCS
       run: |
-        gsutil -m rm -rf gs://tftestpr || echo "$?"
         gsutil -m cp -r * gs://tftestpr
 
     # steps:
+           # gsutil -m rm -rf gs://tftestpr || echo "$?"
     #   - name: Checkout code
     #     uses: actions/checkout@v2
 
