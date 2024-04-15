@@ -24,6 +24,13 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: fiery-bit-420221
 
+    - uses: 'google-github-actions/auth@v2'
+      with:
+        service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: fiery-bit-420221
+
+
     - name: Deploy via GCS
       run: |
         gsutil -m rm -rf gs://tftestpr || echo "$?"
