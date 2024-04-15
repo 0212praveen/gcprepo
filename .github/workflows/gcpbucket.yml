@@ -26,8 +26,8 @@ jobs:
 
     - name: Deploy via GCS
       run: |
-        gsutil -m rm -rf gs://github-action-gcs/tftestpr || echo "$?"
-        gsutil -m cp -r * gs://github-action-gcs/tftestpr
+        gsutil -m rm -rf gs://fiery-bit-420221/tftestpr || echo "$?"
+        gsutil -m cp -r * gs://fiery-bit-420221/tftestpr
 
     # steps:
     #   - name: Checkout code
